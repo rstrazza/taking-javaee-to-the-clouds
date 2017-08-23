@@ -1,0 +1,92 @@
+# JavaOne
+
+## Session
+
+**Taking Java EE to the Clouds CON3419**
+
+This session is a fast-paced tour of the many options available for running Java EE applications in
+the cloud. It covers bare metal IaaS options such as AWS; PaaS options that provide native support
+for Java EE, such as Oracle Java Cloud Service/BlueMix; and everything in between. It also discusses
+how to deploy Dockerized Java EE applications to options such as Jelastic as well as running Java EE
+applications by using fat-jar solutions such as WildFly Swarm on bare JVM-based platforms such as Heroku.
+The presentation includes plenty of code examples and demos along the way.
+
+Track:  Java, Cloud, and Server-Side Development
+Experience Level:  Introductory
+
+Speakers:
+
+* Rodrigo Bortoloto, CapTech
+* Ryan Cuprak, Dassault Systemes
+* Reza Rahman, CapTech
+
+Links:
+* [JavaOne](https://events.rainfocus.com/catalog/oracle/oow17/catalogjavaone17?search=Con3419)
+* [Slideshare?]() - TODO: ADD LINK
+
+## Java EE Demo Application
+
+**Cargo Tracker**
+
+For additional information about the demo application, visit the Cargo Tracker [official page](http://cargotracker.java.net) and source code on [github](https://javaee.github.io/cargotracker/).
+
+## Demos
+
+The goal of the demos will be to deploy the Cargo Tracker application using different packaging styles targeting multiple Cloud Providers at different service levels.
+
+The demos in this repo are organized by following folder structure:
+&lt;platform&gt;-&lt;cloud-provider&gt;-&lt;service&gt;-&lt;deployment-type&gt;. Current demos:
+
+* iaas-aws-ec2-war
+* paas-aws-elasticbeanstalk-docker
+* paas-jelastic-
+* paas-oraclecloud-weblogic
+
+---
+
+== Jelastic ==
+USE: https://github.com/m-reza-rahman/pragmatic-microservices-lab/blob/master/complex-concepts/cargo-tracker/src/docker/Dockerfile
+
+### War Deployments
+
+* AWS IaaS using Glassfish
+
+    Fully automated provisioning of AWS resources via CloudFormation
+
+* Oracle Java Cloud Services PaaS using Glassfish
+
+    TODO: check Glassfish support / likely Weblogic?
+    - http://git.delabassee.com/ct/WlsHowTo.html
+
+* IBM BlueMix PaaS using Glassfish
+
+    TODO: check Glassfish support / likely Websphere?
+
+### Fat-Jar Deployments
+
+* WildFly Swarm on bare JVM-based platforms such as Heroku
+* ? Google Cloud Engine ?
+* ? AWS ElasticBeanstalk ?
+
+PURE JVM - PAYARA MICRO -> Heroku / GCE
+
+### Docker Deployments - they already have the docker image/file?
+
+https://github.com/m-reza-rahman/pragmatic-microservices-lab/tree/master/complex-concepts
+
+* Jelastic
+* ? AWS ECS ?
+
+## Rodrigo's notes:
+
+What I worked on yesterday:
+
+* Getting familiar with Cargo Tracker application source code, reading documentation (noticed a few bugs)
+* Built source code and ran application via "mvn run" (only glassfish is working)
+* Deployed app locally on Glassfish (Google maps does not load)
+
+What I'm planning to work on "today/tomorrow":
+
+* Continue reading the documentation and exploring the app / need to get the deployment right
+* Fork the app?
+* Create AWS Cloud Formation template for automated IaaS deployment on Glassfish
