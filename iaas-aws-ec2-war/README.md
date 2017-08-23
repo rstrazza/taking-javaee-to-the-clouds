@@ -52,7 +52,7 @@ Select a key pair that will later be used to SSH to the Linux server. Click
 "Launch Instances"
 
 *For more information on key pair check the [AWS Key Pairs](#ec2-key-pairs)
-link on the References section of this document called *
+link on the References section of this document called*
 
 ![alt text](img/ec2-select-key-pair.png)
 
@@ -114,11 +114,10 @@ echo $JAVA_HOME
 Download GlassFish:
 
 ```shell
-wget http://download.java.net/glassfish/4.1.2/release/glassfish-4.1.2.zip```
+wget http://download.java.net/glassfish/4.1.2/release/glassfish-4.1.2.zip
+```
 
-Unzip the downloaded file and "cd glassfish4" folder.
-
-Start the default domain:
+Unzip the downloaded file and "cd glassfish4" folder. Start the default domain:
 
 ```shell
 bin/asadmin start-domain
@@ -127,28 +126,21 @@ Successfully started the domain : domain1
 domain  Location: /home/ubuntu/glassfish4/glassfish/domains/domain1
 Log File: /home/ubuntu/glassfish4/glassfish/domains/domain1/logs/server.log
 Admin Port: 4848
-Command start-domain executed successfully.```
+Command start-domain executed successfully.
+```
 
-Enable Secure Admin to access the DAS remotely. The default GlassFish admin user is admin and password is empty/none.
+Enable Secure Admin to access the DAS remotely:
 
 ```shell
+# Change the default GlassFish admin user password (empty/none)
 bin/asadmin change-admin-password
-Enter admin user name [default: admin]>
-Enter the admin password>
-Enter the new admin password>
-Enter the new admin password again>
-Command change-admin-password executed successfully.```
 
-Enable secure admin and restart the domain:
-
-```shell
+# Enable secure admin
 bin/asadmin enable-secure-admin
-Enter admin user name>  admin
-Enter admin password for user "admin">
-You must restart all running servers for the change in secure admin to take effect.
-Command enable-secure-admin executed successfully.
 
-bin/asadmin restart-domain```
+# Restart the domain
+bin/asadmin restart-domain
+```
 
 Open the browser pointing to the EC2 Instance public IP address on port 4848:
 
