@@ -1,4 +1,4 @@
-# JavaOne
+# JavaOne - DRAFT WORK IN PROGRESS
 
 ## Session
 
@@ -76,17 +76,3 @@ https://github.com/m-reza-rahman/pragmatic-microservices-lab/tree/master/complex
 
 * Jelastic
 * ? AWS ECS ?
-
-## Rodrigo's notes:
-
-What I worked on yesterday:
-
-* Getting familiar with Cargo Tracker application source code, reading documentation (noticed a few bugs)
-* Built source code and ran application via "mvn run" (only glassfish is working)
-* Deployed app locally on Glassfish (Google maps does not load)
-
-What I'm planning to work on "today/tomorrow":
-
-* Continue reading the documentation and exploring the app / need to get the deployment right
-* Fork the app?
-* Create AWS Cloud Formation template for automated IaaS deployment on Glassfish
