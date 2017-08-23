@@ -150,6 +150,10 @@ Command enable-secure-admin executed successfully.
 
 bin/asadmin restart-domain```
 
+Open the browser pointing to the EC2 Instance public IP address on port 4848:
+
+![alt text](img/glassfish-admin-page.png)
+
 ## Deploying the Cargo Tracker application
 
 TODO.
