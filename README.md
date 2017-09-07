@@ -28,7 +28,7 @@ Links:
 
 **Cargo Tracker**
 
-For additional information about the demo application, visit the Cargo Tracker [official page](http://cargotracker.java.net) and source code on [github](https://javaee.github.io/cargotracker/).
+For additional information about the demo application, visit the Cargo Tracker [official page](http://cargotracker.java.net). The source code used for this demo was forked from [Cargo Tracker github](https://javaee.github.io/cargotracker/) and is available [here](https://github.com/rstrazza/cargotracker)
 
 ## Demos
 
@@ -38,11 +38,14 @@ The demos in this repo are organized by following folder structure:
 &lt;platform&gt;-&lt;cloud-provider&gt;-&lt;service&gt;-&lt;deployment-type&gt;. Current demos:
 
 * iaas-aws-ec2-war
-* paas-aws-elasticbeanstalk-docker
-* paas-jelastic-
-* paas-oraclecloud-weblogic
+* paas-aws-elasticbeanstalk-war
+* iaas-aws-ecs-docker
+* paas-jelastic-war
+* paas-oraclecloud-war
 
 ---
+
+TODO: guide on how to build war / docker artifacts
 
 == Jelastic ==
 USE: https://github.com/m-reza-rahman/pragmatic-microservices-lab/blob/master/complex-concepts/cargo-tracker/src/docker/Dockerfile
@@ -74,5 +77,20 @@ PURE JVM - PAYARA MICRO -> Heroku / GCE
 
 https://github.com/m-reza-rahman/pragmatic-microservices-lab/tree/master/complex-concepts
 
-* Jelastic
-* ? AWS ECS ?
+Presentation considerations:
+* Monitoring
+* Clustering
+
+Mental model:
+* Use Jelastic for the docker demo
+* Oracle Cloud - 30 day trial
+* Explore Azure - Weblogic
+* Explore BlueMix and/or OpenShift
+* Heroku
+* GCE
+
+Likely demo sequence:
+1 - AWS IaaS
+2 - Jelastic
+3 - PaaS - Oracle Cloud
+4 - Heroku

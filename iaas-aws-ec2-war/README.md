@@ -1,6 +1,7 @@
-# Java EE on IaaS
+# Java EE on IaaS: AWS EC2
 
 TODO: Add intro / description - using Glassfish
+TODO: Review AMI with Java EE application server
 
 ## Provisioning AWS infrastructure
 
@@ -78,7 +79,8 @@ Find the EC2 instance Public IP address:
 Open your favorite command line and SSH to the EC2 instance:
 
 ```shell
-ssh -v -i rbortoloto_oregon_keypair.pem ubuntu@34.212.44.118```
+ssh -v -i rbortoloto_oregon_keypair.pem ubuntu@34.212.44.118
+```
 
 ### Install Java
 
@@ -95,7 +97,8 @@ OpenJDK 64-Bit Server VM (build 25.131-b11, mixed mode)
 # Find java home
 sudo update-alternatives --config java
 There is only one alternative in link group java (providing /usr/bin/java): /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
-Nothing to configure.```
+Nothing to configure.
+```
 
 Setup JAVA_HOME
 
@@ -148,10 +151,26 @@ Open the browser pointing to the EC2 Instance public IP address on port 4848:
 
 ## Deploying the Cargo Tracker application
 
-TODO.
+```shell
+# Have the war file available for deployment
+ubuntu@ip-172-31-47-128:~$ ls -la *.war
+-rw-r--r-- 1 ubuntu ubuntu 4398736 Sep  4 13:53 cargo-tracker.war
+
+# From the Glassfish home folder, deploy the artifact
+ubuntu@ip-172-31-47-128:~/glassfish4$ bin/asadmin deploy ~/cargo-tracker.war
+Enter admin user name>  admin
+Enter admin password for user "admin">
+Application deployed with name cargo-tracker.
+Command deploy executed successfully.
+```
+
+Open the browser pointing to the EC2 Instance public IP address on port 8080:
+
+![alt text](img/cargo-tracker-home-page.png)
 
 ## References:
 
 * [AWS EC2: Launch Your Instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/LaunchingAndUsingInstances.html)
 * <a name="ec2-key-pairs">[Amazon EC2 Key Pairs](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)</a>
 * [Connecting to Your Linux Instance Using SSH](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html)
+* [GlassFish Server: Application Deployment Guide](https://javaee.github.io/glassfish/doc/4.0/application-deployment-guide.pdf)

@@ -1,0 +1,70 @@
+[
+  {
+    "ParameterKey": "AsgMaxSize",
+    "ParameterValue": "1"
+  },
+  {
+    "ParameterKey": "CreateElasticLoadBalancer",
+    "ParameterValue": "false"
+  },
+  {
+    "ParameterKey": "EcsAmiId",
+    "ParameterValue": "ami-1d668865"
+  },
+  {
+    "ParameterKey": "EcsClusterName",
+    "ParameterValue": "default"
+  },
+  {
+    "ParameterKey": "EcsEndpoint",
+    "ParameterValue": ""
+  },
+  {
+    "ParameterKey": "EcsInstanceType",
+    "ParameterValue": "t2.micro"
+  },
+  {
+    "ParameterKey": "EcsPort",
+    "ParameterValue": "80"
+  },
+  {
+    "ParameterKey": "ElbHealthCheckTarget",
+    "ParameterValue": "HTTP:80/"
+  },
+  {
+    "ParameterKey": "ElbPort",
+    "ParameterValue": "80"
+  },
+  {
+    "ParameterKey": "IamRoleInstanceProfile",
+    "ParameterValue": "ecsInstanceRole"
+  },
+  {
+    "ParameterKey": "KeyName",
+    "ParameterValue": "rbortoloto_oregon_keypair"
+  },
+  {
+    "ParameterKey": "SourceCidr",
+    "ParameterValue": "0.0.0.0/0"
+  },
+  {
+    "ParameterKey": "SubnetCidrBlock1",
+    "ParameterValue": "10.0.0.0/24"
+  },
+  {
+    "ParameterKey": "SubnetCidrBlock2",
+    "ParameterValue": "10.0.1.0/24"
+  },
+  {
+    "ParameterKey": "TargetGroupName",
+    "ParameterValue": "ECSFirstRunTargetGroup"
+  },
+  {
+    "ParameterKey": "VpcAvailabilityZones",
+    "ParameterValue": "us-west-2b,us-west-2a,us-west-2c"
+  },
+  {
+    "ParameterKey": "VpcCidrBlock",
+    "ParameterValue": "10.0.0.0/16"
+  }
+]
