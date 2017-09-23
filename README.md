@@ -1,4 +1,4 @@
-# JavaOne - DRAFT WORK IN PROGRESS
+# JavaOne 2017
 
 ## Session
 
@@ -22,26 +22,52 @@ Speakers:
 
 Links:
 * [JavaOne](https://events.rainfocus.com/catalog/oracle/oow17/catalogjavaone17?search=Con3419)
-* [Slideshare?]() - TODO: ADD LINK
+* [Slideshare: COMMING SOON]()
 
 ## Java EE Demo Application
 
-**Cargo Tracker**
+We used a fork of the [Cargo Tracker](http://cargotracker.java.net) JEE Application available in [this git repository](https://github.com/rstrazza/cargotracker)
 
-For additional information about the demo application, visit the Cargo Tracker [official page](http://cargotracker.java.net). The source code used for this demo was forked from [Cargo Tracker github](https://javaee.github.io/cargotracker/) and is available [here](https://github.com/rstrazza/cargotracker)
+TODO: Building the war file.
+
+## Cloud Providers
+
+### Amazon Web Services
+
+* [IaaS using EC2 Instances](aws/ec2/README.md)
+* [IaaS using Docker on EC2 Container Service](aws/ecs/README.md)
+* [PaaS using ElasticBeanstalk](aws/elasticbeanstalk/README.md)
+
+### IBM BlueMix
+
+*TODO*
+
+### Jelastic
+
+Example using [Jelatic PaaS](jelastic/README.md) for Java applications.
+
+### Heroku
+
+*TODO*
+
+### Microsoft Azure
+
+[Java on Azure](https://azure.microsoft.com/en-us/develop/java/) provides support to Java applications at two levels:
+1. PaaS: Web Apps only supports Tomcat and Jetty. For a full list, check
+
+[Upload a custom Java web app to Azure](https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-java-custom-upload)
+
+2. IaaS: By leveraging pre configure Virtual Machines with Oracle WebLogic Server and IBM WebSphere Application.
+
+### Oracle Cloud
+
+TODO
 
 ## Demos
 
-The goal of the demos will be to deploy the Cargo Tracker application using different packaging styles targeting multiple Cloud Providers at different service levels.
+The goal of the demos is to deploy the Cargo Tracker application using different packaging styles targeting multiple Cloud Providers at different service levels.
 
-The demos in this repo are organized by following folder structure:
-&lt;platform&gt;-&lt;cloud-provider&gt;-&lt;service&gt;-&lt;deployment-type&gt;. Current demos:
-
-* iaas-aws-ec2-war
-* paas-aws-elasticbeanstalk-war
-* iaas-aws-ecs-docker
-* paas-jelastic-war
-* paas-oraclecloud-war
+The demos in this repo are organized by cloud provider followed by their specific service.
 
 ---
 
