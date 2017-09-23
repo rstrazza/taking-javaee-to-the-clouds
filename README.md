@@ -24,11 +24,45 @@ Links:
 * [JavaOne](https://events.rainfocus.com/catalog/oracle/oow17/catalogjavaone17?search=Con3419)
 * [Slideshare: COMMING SOON]()
 
-## Java EE Demo Application
+## Java EE Application
 
-We used a fork of the [Cargo Tracker](http://cargotracker.java.net) JEE Application available in [this git repository](https://github.com/rstrazza/cargotracker)
+The application used is a fork of the [Cargo Tracker](http://cargotracker.java.net) JEE Application available in [this git repository](https://github.com/rstrazza/cargotracker)
 
-TODO: Building the war file.
+The deployment artifacts were manually built by following one or more of the steps below:
+
+### The ``war`` file
+
+Options for obtaining the war file used across the examples:
+
+1. Check out the [code](https://github.com/rstrazza/cargotracker) and run:
+```bash
+mvn clean package
+```
+
+2. OR, use the war file available [here](https://github.com/rstrazza/cargotracker-war)
+
+### The ``Dockerfile`` file
+
+Creating the docker image used across the examples:
+
+1. Check out the [code](https://github.com/rstrazza/cargotracker) and run:
+```bash
+mvn clean package
+```
+2. Build the docker image:
+```bash
+cd src/docker
+./build.sh
+```
+3. Run the docker image:
+```bash
+./run.sh
+```
+
+Alternatively, just pull the docker image directly from [Docker Hub](https://hub.docker.com/r/rstrazza/cargotracker-payara-server/):
+```bash
+docker pull rstrazza/cargotracker-payara-server
+```
 
 ## Cloud Providers
 
