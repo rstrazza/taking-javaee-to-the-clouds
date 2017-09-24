@@ -1,82 +1,83 @@
-# Java EE on IaaS: AWS EC2
+# Running Java EE on AWS EC2
 
-TODO: Add intro / description - using Glassfish
-TODO: Review AMI with Java EE application server
+Stack:
+
+* [EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)
+* GlassFish 4.1
+* OpenJDK 1.8.0_131
 
 ## Provisioning AWS infrastructure
 
-Log to AWS EC2 Console and Click on Launch Instance:
+* Log to AWS EC2 Console and Click on Launch Instance:
 
 ![alt text](img/ec2-console.png)
 
-Select the AMI of your choice. In this demo we will use Ubuntu.
+* Select the AMI of your choice. In this demo we will use Ubuntu.
 
 ![alt text](img/ec2-select-ami.png)
 
-Select the Instance Type and click "Next: Configure Instance Details"
-
-- TODO: validate if t2.micro runs fine
+* Select the Instance Type and click "Next: Configure Instance Details"
 
 ![alt text](img/ec2-select-instance-type.png)
 
-Take all the default values, but make sure that "Auto-assign Public IP" is set
+* Take all the default values, but make sure that "Auto-assign Public IP" is set
 to Enable. Click "Next: Add Storage"
 
 ![alt text](img/ec2-configure-instance-details.png)
 
-Take all the default values. Click "Next: Add Tags"
+* Take all the default values. Click "Next: Add Tags"
 
 ![alt text](img/ec2-add-storage.png)
 
-Always tag your AWS resources. Click "Next: Configure Security Group"
+* Always tag your AWS resources. Click "Next: Configure Security Group"
 
 ![alt text](img/ec2-add-tags.png)
 
-Create a new Security Group. Security Group acts as a virtual firewall that
+* Create a new Security Group. Security Group acts as a virtual firewall that
 controls the traffic for one or more EC2 instances. In this case we need to:
-* Allow SSH incoming traffic
-* Allow web traffic on port 8080 for the Cargo Tracker application
-* Allow web traffic on port 4848 for GlassFish Admin Console
+  * Allow SSH incoming traffic
+  * Allow web traffic on port 8080 for the Cargo Tracker application
+  * Allow web traffic on port 4848 for GlassFish Admin Console
 
-*Note: As displayed in the Warning box, opening ports to the whole world (0.0.0.0)
+  *Note: As displayed in the Warning box, opening ports to the whole world (0.0.0.0)
 is not a recommended approach and it is only used for the purposes of this demo*
 
-Click "Review and Launch"
+* Click "Review and Launch"
 
 ![alt text](img/ec2-configure-security-group.png)
 
-Review your configuration. Click "Launch"
+* Review your configuration. Click "Launch"
 
 ![alt text](img/ec2-review-and-launch.png)
 
-Select a key pair that will later be used to SSH to the Linux server. Click
+* Select a key pair that will later be used to SSH to the Linux server. Click
 "Launch Instances"
 
-*For more information on key pair check the [AWS Key Pairs](#ec2-key-pairs)
+  *For more information on key pair check the [AWS Key Pairs](#ec2-key-pairs)
 link on the References section of this document called*
 
 ![alt text](img/ec2-select-key-pair.png)
 
-Your instance will be provisioned, usually in a few minutes. Click "View Instances"
+* Your instance will be provisioned, usually in a few minutes. Click "View Instances"
 
 ![alt text](img/ec2-launch-status.png)
 
-Wait until the EC2 instance finishes the provisioning process, moving the Status
+* Wait until the EC2 instance finishes the provisioning process, moving the Status
 Check from "initializing" ...
 
 ![alt text](img/ec2-status-check-initializing.png)
 
-To "2/2 checks passed". With this, we are ready to setup GlassFish!
+* To "2/2 checks passed". With this, we are ready to setup GlassFish!
 
 ![alt text](img/ec2-status-check-done.png)
 
 ## GlassFish setup
 
-Find the EC2 instance Public IP address:
+* Find the EC2 instance Public IP address:
 
 ![alt text](img/ec2-instance-details.png)
 
-Open your favorite command line and SSH to the EC2 instance:
+* Open your favorite command line and SSH to the EC2 instance:
 
 ```shell
 ssh -v -i rbortoloto_oregon_keypair.pem ubuntu@34.212.44.118
@@ -100,7 +101,7 @@ There is only one alternative in link group java (providing /usr/bin/java): /usr
 Nothing to configure.
 ```
 
-Setup JAVA_HOME
+* Setup JAVA_HOME
 
 ```shell
 # Update environment
@@ -114,13 +115,13 @@ echo $JAVA_HOME
 
 ### GlassFish
 
-Download GlassFish:
+* Download GlassFish:
 
 ```shell
 wget http://download.java.net/glassfish/4.1.2/release/glassfish-4.1.2.zip
 ```
 
-Unzip the downloaded file and "cd glassfish4" folder. Start the default domain:
+* Unzip the downloaded file and enter the folder: `cd glassfish4`. Start the default domain:
 
 ```shell
 bin/asadmin start-domain
@@ -132,7 +133,7 @@ Admin Port: 4848
 Command start-domain executed successfully.
 ```
 
-Enable Secure Admin to access the DAS remotely:
+* Enable Secure Admin to access the DAS remotely:
 
 ```shell
 # Change the default GlassFish admin user password (empty/none)
@@ -145,11 +146,13 @@ bin/asadmin enable-secure-admin
 bin/asadmin restart-domain
 ```
 
-Open the browser pointing to the EC2 Instance public IP address on port 4848:
+* Open the browser pointing to the EC2 Instance public IP address on port 4848:
 
 ![alt text](img/glassfish-admin-page.png)
 
 ## Deploying the Cargo Tracker application
+
+* Deploy the war file
 
 ```shell
 # Have the war file available for deployment
@@ -164,11 +167,11 @@ Application deployed with name cargo-tracker.
 Command deploy executed successfully.
 ```
 
-Open the browser pointing to the EC2 Instance public IP address on port 8080:
+* Open the browser pointing to the EC2 Instance public IP address on port 8080:
 
 ![alt text](img/cargo-tracker-home-page.png)
 
-## References:
+## References
 
 * [AWS EC2: Launch Your Instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/LaunchingAndUsingInstances.html)
 * <a name="ec2-key-pairs">[Amazon EC2 Key Pairs](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)</a>

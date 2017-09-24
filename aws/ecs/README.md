@@ -1,15 +1,21 @@
-# Java EE on IaaS: AWS EC2 Container Service
+# Running Java EE in a Docker container on EC2 Container Service (ECS)
 
-TODO: Add intro / description - using Glassfish
-TODO: Introduce Clusters, Task Definitions and Repositories
+Stack:
 
-Amazon EC2 Container Service [Amazon ECS](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html) is a highly scalable, fast, container management service to manage Docker containers on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances.
-
-Amazon EC2 Container Registry [Amazon ECR](http://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html) is a managed AWS Docker registry service.
+* [EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)
+* [ECR](http://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html)
+* [ECS](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html)
+  * [Clusters](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_clusters.html)
+  * [Services](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html)
+  * [Tasks](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html)
+  * [Task Definitions](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html)
+* Cargo Tracker with [Payara](https://www.payara.fish/) Server Docker container
+  * [Dockerfile](https://raw.githubusercontent.com/rstrazza/cargotracker/master/src/docker/Dockerfile)
+  * [Docker image](https://hub.docker.com/r/rstrazza/cargotracker-payara-server/)
 
 ## Provisioning AWS infrastructure
 
-Open the Amazon ECS console first run wizard at https://console.aws.amazon.com/ecs/home#/firstRun
+* Open the Amazon ECS console [first run wizard](https://console.aws.amazon.com/ecs/home#/firstRun):
 
 ![alt text](img/ecs-first-run.png)
 
@@ -17,15 +23,15 @@ Open the Amazon ECS console first run wizard at https://console.aws.amazon.com/e
 
 This demo will use AWS ECR for ease to use and simple integration with AWS ECS. Private docker registries are also support, check the References section for more information.
 
-Configure the repository:
+* Configure the repository:
 
 ![alt text](img/ecr-config-repo.png)
 
-One the repository is created, ECR will provide the steps on how to login to the docker registry, tag and push an image. Follow the steps.
+* One the repository is created, ECR will provide the steps on how to login to the docker registry, tag and push an image. Follow the steps.
 
 ![alt text](img/ecr-docker.png)
 
-Example pushing the docker image:
+* Example pushing the docker image:
 
 ```shell
 docker push 541485779343.dkr.ecr.us-west-2.amazonaws.com/cargotracker:latest
@@ -53,19 +59,21 @@ cf4ecb492384: Pushed
 latest: digest: sha256:13ab8a42bf6ad7b21976c2652b56a00d93c5da8715de8c96126352339a841c2a size: 4515
 ```
 
-Create a Task Definition or in another words, the instructions on how the Docker container should run:
+* Create a Task Definition or in another words, the instructions on how the Docker container should run:
 
 ![alt text](img/ecs-task-def.png)
 
-Configure the Service:
+* Configure the Service:
 
 ![alt text](img/ecs-service.png)
 
-Configure the ECS Cluster:
+* Configure the ECS Cluster:
 
 ![alt text](img/ecs-config-cluster.png)
 
-Click on **Review & launch**, validate the setup and proceed by clicking on **Launch instance & run service**.
+* Click on **Review & launch**, validate the setup and proceed by clicking on **Launch instance & run service**.
+
+![alt text](img/ecs-cargotracker-service.png)
 
 At the end of the setup, the following AWS resources will be provisioned:
 * ECS Cluster
@@ -82,11 +90,10 @@ At the end of the setup, the following AWS resources will be provisioned:
 * Auto Scaling Group
 * Launch Configuration
 
-![alt text](img/ecs-cargotracker-service.png)
+## References
 
-## References:
-
-* [AWS ECR: Creating a Repository](http://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-create.html)
-* [Getting Started with Amazon ECS:  ](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_GetStarted.html)
-* [AWS ECS: Private Registry Authentication](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/private-auth.html)
-* [Amazon ECS Task Definitions](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html)
+* [Creating an ECR Repository](http://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-create.html)
+* [ECS Private Registry Authentication](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/private-auth.html)
+* [Getting Started with Amazon ECS ](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_GetStarted.html)
+* [Amazon ECS Container Instances](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_instances.html)
+* [ECS Task Definitions](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html)

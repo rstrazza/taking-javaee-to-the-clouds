@@ -26,6 +26,8 @@ Links:
 
 ## Java EE Application
 
+The goal of the demos is to deploy the Cargo Tracker application using different packaging styles targeting multiple Cloud Providers at different service levels.
+
 The application used is a fork of the [Cargo Tracker](http://cargotracker.java.net) JEE Application available in [this git repository](https://github.com/rstrazza/cargotracker)
 
 The deployment artifacts were manually built by following one or more of the steps below:
@@ -95,62 +97,4 @@ Example using [Jelatic PaaS](jelastic/README.md) for Java applications.
 
 ### Oracle Cloud
 
-TODO
-
-## Demos
-
-The goal of the demos is to deploy the Cargo Tracker application using different packaging styles targeting multiple Cloud Providers at different service levels.
-
-The demos in this repo are organized by cloud provider followed by their specific service.
-
----
-
-TODO: guide on how to build war / docker artifacts
-
-== Jelastic ==
-USE: https://github.com/m-reza-rahman/pragmatic-microservices-lab/blob/master/complex-concepts/cargo-tracker/src/docker/Dockerfile
-
-### War Deployments
-
-* AWS IaaS using Glassfish
-
-    Fully automated provisioning of AWS resources via CloudFormation
-
-* Oracle Java Cloud Services PaaS using Glassfish
-
-    TODO: check Glassfish support / likely Weblogic?
-    - http://git.delabassee.com/ct/WlsHowTo.html
-
-* IBM BlueMix PaaS using Glassfish
-
-    TODO: check Glassfish support / likely Websphere?
-
-### Fat-Jar Deployments
-
-* WildFly Swarm on bare JVM-based platforms such as Heroku
-* ? Google Cloud Engine ?
-* ? AWS ElasticBeanstalk ?
-
-PURE JVM - PAYARA MICRO -> Heroku / GCE
-
-### Docker Deployments - they already have the docker image/file?
-
-https://github.com/m-reza-rahman/pragmatic-microservices-lab/tree/master/complex-concepts
-
-Presentation considerations:
-* Monitoring
-* Clustering
-
-Mental model:
-* Use Jelastic for the docker demo
-* Oracle Cloud - 30 day trial
-* Explore Azure - Weblogic
-* Explore BlueMix and/or OpenShift
-* Heroku
-* GCE
-
-Likely demo sequence:
-1 - AWS IaaS
-2 - Jelastic
-3 - PaaS - Oracle Cloud
-4 - Heroku
+*TODO*

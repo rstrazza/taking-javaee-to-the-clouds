@@ -1,4 +1,13 @@
-# Java EE on PaaS: Jelastic Java
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Java EE on Jelastic PaaS](#java-ee-on-jelastic-paas)
+	- [Provisioning GlassFish Server](#provisioning-glassfish-server)
+	- [Deploying the Cargo Tracker application](#deploying-the-cargo-tracker-application)
+	- [References](#references)
+
+<!-- /TOC -->
+
+# Java EE on Jelastic PaaS
 
 Java EE is a first class citizen in the Jelastic PaaS environment. The
 first service released late 2011 was for the Java EE platform.
@@ -70,7 +79,7 @@ Once the deployment completes, open the browser using the same URL presented bef
 
 ![alt text](img/cargo-tracker-app.png)
 
-## References:
+## References
 
 * [What is Jelastic PaaS & CaaS?](https://docs.jelastic.com/what-is-paas-and-caas)
 * [How to Create your Jelastic Environment](https://docs.jelastic.com/setting-up-environment)
