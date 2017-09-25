@@ -92,15 +92,17 @@ docker pull rstrazza/cargotracker-payara-server
 
 [Java on Azure](https://azure.microsoft.com/en-us/develop/java/) provides support to Java applications at two levels:
 
-1. PaaS:
+* PaaS:
   * [Web Apps](https://azure.microsoft.com/en-us/services/app-service/web/) support for Tomcat and Jetty
-2. IaaS:
+* IaaS:
   * Build everything. Similar approach demonstrated in the [AWS EC2 Instances](aws/ec2/README.md) example
   * Preconfigure Virtual Machines with Oracle WebLogic Server and IBM WebSphere Application
 
+Given the similarity with other platforms, Azure will be evaluated at a later time.
+
 [Azure Container Service](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoft.acs) would be an option for deploying Java EE applications packaged in a Docker container.
 
-#### Reference
+**Reference**
 
 * [Azure for Java developers](https://docs.microsoft.com/en-us/java/azure/)
 * [Configure web apps in Azure App Service](https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-java-custom-upload)
