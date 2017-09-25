@@ -1,3 +1,5 @@
+
+
 # JavaOne 2017
 
 ## Session
@@ -80,7 +82,7 @@ docker pull rstrazza/cargotracker-payara-server
 
 ### Jelastic
 
-Example using [Jelatic PaaS](jelastic/README.md) for Java applications.
+* [Jelatic PaaS](jelastic/README.md)
 
 ### Heroku
 
@@ -89,11 +91,19 @@ Example using [Jelatic PaaS](jelastic/README.md) for Java applications.
 ### Microsoft Azure
 
 [Java on Azure](https://azure.microsoft.com/en-us/develop/java/) provides support to Java applications at two levels:
-1. PaaS: Web Apps only supports Tomcat and Jetty. For a full list, check
 
-[Upload a custom Java web app to Azure](https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-java-custom-upload)
+1. PaaS:
+  * [Web Apps](https://azure.microsoft.com/en-us/services/app-service/web/) support for Tomcat and Jetty
+2. IaaS:
+  * Build everything. Similar approach demonstrated in the [AWS EC2 Instances](aws/ec2/README.md) example
+  * Preconfigure Virtual Machines with Oracle WebLogic Server and IBM WebSphere Application
 
-2. IaaS: By leveraging pre configure Virtual Machines with Oracle WebLogic Server and IBM WebSphere Application.
+[Azure Container Service](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoft.acs) would be an option for deploying Java EE applications packaged in a Docker container.
+
+#### Reference
+
+* [Azure for Java developers](https://docs.microsoft.com/en-us/java/azure/)
+* [Configure web apps in Azure App Service](https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-java-custom-upload)
 
 ### Oracle Cloud
 

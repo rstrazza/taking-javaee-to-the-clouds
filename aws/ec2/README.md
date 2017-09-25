@@ -174,6 +174,8 @@ Command deploy executed successfully.
 ## References
 
 * [AWS EC2: Launch Your Instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/LaunchingAndUsingInstances.html)
+* [Amazon Machine Images (AMI)](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html)
+* [Security Groups for Your VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html)
 * <a name="ec2-key-pairs">[Amazon EC2 Key Pairs](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)</a>
 * [Connecting to Your Linux Instance Using SSH](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html)
 * [GlassFish Server: Application Deployment Guide](https://javaee.github.io/glassfish/doc/4.0/application-deployment-guide.pdf)

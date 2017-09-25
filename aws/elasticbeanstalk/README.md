@@ -2,7 +2,7 @@
 
 [AWS Elastic Beanstalk](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html) aims at taking control of the underlying infrastructure necessary to run applications, offering to handle the details of capacity provisioning, load balancing, scaling, and application health monitoring.
 
-This PaaS offering supports [several platforms](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html) but might be considered somewhat limited to the Java ecosystem by offering Java SE (jar) and Tomcat. It has preconfigured Docker images with GlassFish 4 in addition to regular Docker support to bring your image.
+This PaaS offering supports [several platforms](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html) but might be considered somewhat limited to the Java ecosystem by offering Java SE (jar), Tomcat and a preconfigured Docker image with GlassFish 4.
 
 The preconfigured images are available on [Docker Hub](https://hub.docker.com/r/amazon/aws-eb-glassfish/) which can be an option for [local testing](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_dockerpreconfig.walkthrough.html).
 
@@ -45,4 +45,6 @@ The preconfigured images are available on [Docker Hub](https://hub.docker.com/r/
 ## References
 
 * [Creating and Deploying Java Applications on AWS Elastic Beanstalk](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_Java.html)
-* [Deployment Policies and Settings](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.rolling-version-deploy.html?icmpid=docs_elasticbeanstalk_console)
+* [Advanced Environment Customization with Configuration Files (.ebextensions)](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/ebextensions.html)
+* [Deploying Applications to AWS Elastic Beanstalk Environments](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html)
+* [The Elastic Beanstalk Command Line Interface (EB CLI)](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3.html)
