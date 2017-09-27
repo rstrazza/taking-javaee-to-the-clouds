@@ -24,7 +24,7 @@ Speakers:
 
 Links:
 * [JavaOne](https://events.rainfocus.com/catalog/oracle/oow17/catalogjavaone17?search=Con3419)
-* [Slideshare: COMMING SOON]()
+* [Slideshare](https://www.slideshare.net/reza_rahman/taking-java-ee-to-the-clouds)
 
 ## Java EE Application
 
