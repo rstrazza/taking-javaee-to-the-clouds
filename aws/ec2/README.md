@@ -53,8 +53,7 @@ is not a recommended approach and it is only used for the purposes of this demo*
 * Select a key pair that will later be used to SSH to the Linux server. Click
 "Launch Instances"
 
-  *For more information on key pair check the [AWS Key Pairs](#ec2-key-pairs)
-link on the References section of this document called*
+  *For more information on key Pairs check the References link: [AWS Key Pairs](#ec2-key-pairs)*
 
 ![alt text](img/ec2-select-key-pair.png)
 
@@ -105,7 +104,7 @@ Nothing to configure.
 
 ```shell
 # Update environment
-sudo vi /etc/environment
+sudo echo "JAVA_HOME=/etc/environment" >> /etc/environment
 source /etc/environment
 
 # Validate
@@ -155,9 +154,8 @@ bin/asadmin restart-domain
 * Deploy the war file
 
 ```shell
-# Have the war file available for deployment
-ubuntu@ip-172-31-47-128:~$ ls -la *.war
--rw-r--r-- 1 ubuntu ubuntu 4398736 Sep  4 13:53 cargo-tracker.war
+# Download the war file for deployment
+wget https://github.com/rstrazza/cargotracker-war/cargo-tracker.war
 
 # From the Glassfish home folder, deploy the artifact
 ubuntu@ip-172-31-47-128:~/glassfish4$ bin/asadmin deploy ~/cargo-tracker.war

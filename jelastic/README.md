@@ -10,7 +10,7 @@
 # Java EE on Jelastic PaaS
 
 Java EE is a first class citizen in the Jelastic PaaS environment. The
-first service released late 2011 was for the Java EE platform.
+first service released late 2011 was dedicated to the Java EE platform.
 
 This demo is using Jelastic Stark v.5.2 to deploy the Java EE Cargo Tracker
 application on GlassFish 4.1.2.
@@ -27,7 +27,7 @@ Tomcat as the selected options by default. Click on the *Tomcat logo* to expand 
 
 ![alt text](img/single-node-create-env-select-gf.png)
 
-For this example, a single node of GlassFish will suffice. Define the vertical scaling configuration per node by selecting how much RAM and CPU will be *reserved* to each node. That is the computing capacity allocated and available at all times to the infrastructure (container) where the GlassFish server will be running. Still, as part of the vertical scaling configuration, define the *scaling limit* capacity that the server can grow to if the need arrives. For example, during peak times an application might require more memory to handle the load.
+For this example, a single node of GlassFish will suffice. Define the vertical scaling configuration per node by selecting how much RAM and CPU will be *reserved* to each node. That is the computing capacity allocated and available at all times to the infrastructure (container) where the GlassFish server will be running. Still, as part of the vertical scaling configuration, define the *scaling limit* capacity the server can use if needed. For example, during peak times an application might require more memory to handle the load.
 
 This configuration is based on Jelastic [Cloudlets](https://docs.jelastic.com/cloudlet). It is important to understand how it works and the billing model to avoid undesired billing surprises. The platform does a good job estimating the new environment initial cost as well as to how much it can grow based on scaling events.
 
@@ -93,3 +93,5 @@ Once the deployment completes, open the browser using the same URL presented bef
 * [How to Configure GlassFish Cluster with Automatic Load Balancing](https://blog.jelastic.com/2016/08/16/how-to-configure-glassfish-cluster-with-automatic-load-balancing/)
 * [GlassFish Clustering in the Cloud](https://docs.jelastic.com/glassfish-clustering#manual-deploy)
 * [Auto-scalable Jelastic GlassFish Cluster in Containers](https://github.com/jelastic-jps/glassfish)
+* [Blue-Green Deployment with TD](https://docs.jelastic.com/blue-green-deploy)
+* [Statistics Monitoring at Jelastic](https://docs.jelastic.com/view-app-statistics)

@@ -31,6 +31,16 @@ This demo will use AWS ECR for ease to use and simple integration with AWS ECS. 
 
 ![alt text](img/ecr-docker.png)
 
+* Sample [Dockerfile](https://raw.githubusercontent.com/rstrazza/cargotracker/master/src/docker/Dockerfile) content:
+
+```shell
+FROM payara/server-full
+
+COPY cargo-tracker.war /opt/payara41/glassfish/domains/domain1/autodeploy
+
+CMD $PAYARA_PATH/bin/asadmin start-domain --verbose
+```
+
 * Example pushing the docker image:
 
 ```shell

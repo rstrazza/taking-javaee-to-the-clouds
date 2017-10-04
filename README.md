@@ -18,9 +18,9 @@ Experience Level:  Introductory
 
 Speakers:
 
-* Rodrigo Bortoloto, CapTech
-* Ryan Cuprak, Dassault Systemes
-* Reza Rahman, CapTech
+* Rodrigo Bortoloto, [CapTech](www.captechconsulting.com)
+* Ryan Cuprak, [Dassault Systemes](https://www.3ds.com/)
+* Reza Rahman, [CapTech](www.captechconsulting.com)
 
 Links:
 * [JavaOne](https://events.rainfocus.com/catalog/oracle/oow17/catalogjavaone17?search=Con3419)
@@ -76,17 +76,9 @@ docker pull rstrazza/cargotracker-payara-server
 * [IaaS using Docker on EC2 Container Service](aws/ecs/README.md)
 * [PaaS using ElasticBeanstalk](aws/elasticbeanstalk/README.md)
 
-### IBM BlueMix
-
-*TODO*
-
 ### Jelastic
 
 * [Jelatic PaaS](jelastic/README.md)
-
-### Heroku
-
-*TODO*
 
 ### Microsoft Azure
 
@@ -107,6 +99,26 @@ docker pull rstrazza/cargotracker-payara-server
 * [Azure for Java developers](https://docs.microsoft.com/en-us/java/azure/)
 * [Configure web apps in Azure App Service](https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-java-custom-upload)
 
+### Google Cloud Platform
+
+Coming soon ...
+
+### IBM BlueMix
+
+Coming soon ...
+
+### Heroku
+
+Coming soon ...
+
 ### Oracle Cloud
 
-*TODO*
+Coming soon ...
+
+## References
+
+**Cargo Tracker**
+* [Git](https://j3e.github.io/cargo-tracker/)
+* [Documentation](https://sknitelius.gitbooks.io/cargo-tracker/content/overview/overview.html)
+* [Running in NetBeans with GlassFish](http://git.delabassee.com/ct/NetBeansHowTo.html)
+* [Running with WebLogic](http://git.delabassee.com/ct/WlsHowTo.html)
