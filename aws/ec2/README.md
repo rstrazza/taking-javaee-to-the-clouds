@@ -84,15 +84,26 @@ ssh -v -i rbortoloto_oregon_keypair.pem ubuntu@34.212.44.118
 
 ### Install Java
 
+* Pick your JRE
+
+**OpenJDK**
 ```shell
 sudo apt-get update
 sudo apt-get install default-jre
+```
 
+**Oracle JDK**
+```shell
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+```
+
+* Check Java Version
+
+```shell
 # Check version
 java -version
-openjdk version "1.8.0_131"
-OpenJDK Runtime Environment (build 1.8.0_131-8u131-b11-2ubuntu1.16.04.3-b11)
-OpenJDK 64-Bit Server VM (build 25.131-b11, mixed mode)
 
 # Find java home
 sudo update-alternatives --config java
