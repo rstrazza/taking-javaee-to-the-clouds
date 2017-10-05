@@ -101,17 +101,17 @@ docker pull rstrazza/cargotracker-payara-server
 
 ### Google Cloud Platform
 
-Coming soon ...
+* [Research](gcp/README.md)
+
+### Oracle Cloud
+
+* [Research](oracle/README.md)
 
 ### IBM BlueMix
 
 Coming soon ...
 
 ### Heroku
-
-Coming soon ...
-
-### Oracle Cloud
 
 Coming soon ...
 
