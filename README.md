@@ -107,14 +107,6 @@ docker pull rstrazza/cargotracker-payara-server
 
 * [Research](oracle/README.md)
 
-### IBM BlueMix
-
-Coming soon ...
-
-### Heroku
-
-Coming soon ...
-
 ## References
 
 **Cargo Tracker**
